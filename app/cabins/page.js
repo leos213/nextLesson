@@ -2,6 +2,9 @@ import CabinList from "@/app/_components/CabinList";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
 
+// ქეშირების გამორთვა - გვერდი ხდება სრულად დინამიური
+// export const revalidate = 15;
+
 export const metadata = {
   title: "Cabins",
 };

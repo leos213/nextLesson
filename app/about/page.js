@@ -3,7 +3,8 @@ import image1 from "@/public/about-1.jpg";
 import { getCabins } from "../_lib/data-service";
 // import image2 from "@/public/about-2.jpg";
 
-export const revalidate = 86400;
+// ქეშირების გამორთვა - გვერდი ხდება სრულად დინამიური
+// export const revalidate = 86400;
 
 export default async function Page() {
   const cabins = await getCabins();

@@ -1,7 +1,14 @@
+// ეს ბრძანება next.js - ში გამოიყენება მაშინ როცა გვინდა, რომ კონკრეტული მონაცემების წამოღება
+// არასოდეს დაქეშირდეს
+import { unstable_noStore as noStore } from "next/cache";
 import CabinCard from "@/app/_components/CabinCard";
 import { getCabins } from "../_lib/data-service";
 
-async function CavinList() {
+async function CabinList() {
+  // გამოყენებულია , ეს ნიშნავს, რომ როდესაც გამოვიძახებ noStore()-ს
+  // ამ ფუნქციის ქვევით რაც ხდება ქეშიდან არ აიღებს და ყოველთვის ახლიდან გამოითხოვებს
+  // მონაცემთა ბაზიდან ან API-დან
+  // noStore();
   const cabins = await getCabins();
   if (!cabins.length) return null;
   return (
@@ -13,4 +20,4 @@ async function CavinList() {
   );
 }
 
-export default CavinList;
+export default CabinList;
